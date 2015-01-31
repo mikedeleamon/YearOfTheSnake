@@ -1,0 +1,27 @@
+#Playing with functions in Python
+#functions for different Circular calculations
+
+def areaCircle(radius):
+    area = 3.1415926*radius*radius
+    return area
+
+def areaDounut(inRadius, outRadius):
+    inArea= areaCircle(inRadius)
+    outArea= areaCircle(outRadius)
+    return outArea-inArea
+
+def volumeCylinder(inRadius, outRadius,height):
+    ad=areaDounut(inRadius, outRadius)
+    vol= ad*height
+    return vol
+
+def main(): #stores variables and calculates a cylinder's volume
+    r= input('inner Radius? ')
+    r=float(r)
+    r1=input('outer radius? ')
+    r1= float(r1)
+    h=input('height')
+    h=float(h)
+    a= volumeCylinder(r,r1,h)
+    print('{0:.2f}'.format(a))
+main()
