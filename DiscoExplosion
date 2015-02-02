@@ -1,0 +1,35 @@
+#mike amon
+#Disco Explosion
+#this program will draw a large number of circles to look like an explosion
+
+import turtle
+wn=turtle.Screen()               #creating turtle and window
+wn.bgcolor("black")
+fun=turtle.Turtle()
+fun.speed(900)
+
+
+size=0
+space=50
+def circles():
+    
+    fun.color(color)
+    fun.circle(size)
+    fun.penup()                      #CIRCLE LOOP Definition
+    fun.right(30)
+    fun.forward(space)
+    fun.pendown()
+     
+
+for color in ["yellow","light blue","Blue","light yellow","green","pink","orange","light green","purple","white","red"]*6:
+    size=size-1
+    circles()                     #CIRCLE LOOP in & shrink
+
+size=10
+
+for color in ["red","yellow","white"]*24:
+    space=space+2
+    size=size+1
+    circles()                     #CIRCLE LOOP out & grow
+                                  
+wn.exitonclick()
